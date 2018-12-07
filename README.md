@@ -18,4 +18,4 @@ Service: RESTfull;
 
 Building system: Maven;
 
-![Image alt](https://github.com/perelman7/EmployeeProject/raw/master/src/main/resources/image.png)
+![Image alt](https://github.com/perelman7/EmployeeProject/raw/master/src/main/resources/screen1.png)
