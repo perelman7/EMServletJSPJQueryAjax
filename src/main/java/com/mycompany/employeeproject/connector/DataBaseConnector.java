@@ -1,4 +1,4 @@
-package connector;
+package com.mycompany.employeeproject.connector;
 
 import com.mycompany.employeeproject.util.PropertiesReader;
 import java.sql.Connection;

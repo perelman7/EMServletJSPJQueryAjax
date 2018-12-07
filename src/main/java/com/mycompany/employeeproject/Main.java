@@ -5,7 +5,7 @@ import com.mycompany.employeeproject.pgAPI.EmployeeRepository;
 import com.mycompany.employeeproject.model.Department;
 import com.mycompany.employeeproject.model.Employee;
 import com.mycompany.employeeproject.model.EmployeeWithDepartment;
-import connector.DataBaseConnector;
+import com.mycompany.employeeproject.connector.DataBaseConnector;
 import java.util.List;
 
 

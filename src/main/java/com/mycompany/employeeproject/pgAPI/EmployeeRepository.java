@@ -1,6 +1,6 @@
 package com.mycompany.employeeproject.pgAPI;
 
-import connector.DataBaseConnector;
+import com.mycompany.employeeproject.connector.DataBaseConnector;
 import com.mycompany.employeeproject.model.Employee;
 import com.mycompany.employeeproject.model.EmployeeWithDepartment;
 import java.sql.*;

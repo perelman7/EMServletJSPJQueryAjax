@@ -1,6 +1,6 @@
 package com.mycompany.employeeproject.pgAPI;
 
-import connector.DataBaseConnector;
+import com.mycompany.employeeproject.connector.DataBaseConnector;
 import org.apache.log4j.Logger;
 import com.mycompany.employeeproject.model.Department;
 import java.sql.*;
