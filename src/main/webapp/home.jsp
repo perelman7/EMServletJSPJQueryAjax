@@ -89,11 +89,9 @@
                             </c:forEach>
                         </tbody>
                     </table>
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp - 1}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}"><-</a>
+                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp - 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}"><-</a>
                     <div style="float: left;"  class="page-link">${currentPageEmp} / ${maxPagesEmp}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp + 1}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}">-></a>
+                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp + 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}">-></a>
                 </div>
                 <div class="col-lg-6">
                     <table class="table table-bordered table-sm table-hover">
@@ -115,11 +113,9 @@
                             </c:forEach>
                         </tbody>
                     </table>
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep - 1}&maxPagesDep=${maxPagesDep}"><-</a>
+                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep - 1}&maxPagesDep=${maxPagesDep}"><-</a>
                     <div style="float: left;"  class="page-link">${currentPageDep} / ${maxPagesDep}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep + 1}&maxPagesDep=${maxPagesDep}">-></a>
+                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep + 1}&maxPagesDep=${maxPagesDep}">-></a>
                 </div>
             </div>
         </div>
