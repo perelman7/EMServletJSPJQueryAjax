@@ -13,7 +13,7 @@ public class DepartmentRepository {
 
     public List<Department> getAllDepartments(){
         List<Department> departments = new ArrayList<>();
-        String sql = "SELECT id, name_dep, description FROM departments order by id";
+        String sql = "SELECT id, name_dep, description FROM departments ORDER BY id";
         
         try(Connection con = DataBaseConnector.getConnection();
             Statement stmt = con.createStatement();
@@ -31,8 +31,8 @@ public class DepartmentRepository {
         return departments;
     }
 
-    public Department getDepartmentsByName(String nameDep){
-        String sql = "SELECT id, name_dep, description from departments WHERE name_dep like ? order by id";
+    public Department getDepartmentByName(String nameDep){
+        String sql = "SELECT id, name_dep, description FROM departments WHERE name_dep like ?";
         Department result = new Department();
         
         try(Connection con = DataBaseConnector.getConnection();
@@ -77,7 +77,7 @@ public class DepartmentRepository {
         return result;
     }
 
-    public boolean update(Department dep){
+    public boolean updateDepartment(Department dep){
         String sql = "UPDATE departments SET name_dep = ?, description = ? WHERE id = ?";
         boolean result = false;
         
@@ -98,7 +98,7 @@ public class DepartmentRepository {
         return result;
     }
 
-    public boolean delete(int id){
+    public boolean deleteDepartment(int id){
         String sql = "DELETE FROM departments WHERE id = ?";
         boolean result = false;
         try(Connection con = DataBaseConnector.getConnection();

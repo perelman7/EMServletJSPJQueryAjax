@@ -13,8 +13,8 @@ public class EmployeeWithDepartmentRepository {
 
     public List<EmployeeWithDepartment> getAllEmployeeDepartments(){
         List<EmployeeWithDepartment> employees = new ArrayList<>();
-        String sql = "select e.id, e.name, e.surname, e.fathername, e.date_of_berth, d.id as departmentId, d.name_dep from employees as e \n" +
-                        "join departments as d on (e.dep_id = d.id) order by id";
+        String sql = "SELECT e.id, e.name, e.surname, e.fathername, e.date_of_berth, d.id AS departmentId, d.name_dep FROM employees AS e " +
+                        "JOIN departments AS d ON (e.dep_id = d.id) ORDER BY id";
 
         try(Connection con = DataBaseConnector.getConnection();
             Statement stmt = con.createStatement();

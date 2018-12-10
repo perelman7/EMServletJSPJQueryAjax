@@ -1,6 +1,8 @@
 package com.mycompany.employeeproject.model;
 
-public class AjaxResponse {
+import java.io.Serializable;
+
+public class AjaxResponse implements Serializable{
     
     private int status;
     private String message;

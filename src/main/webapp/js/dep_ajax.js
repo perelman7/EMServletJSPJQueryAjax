@@ -187,7 +187,7 @@ function createTableD(val){
     
     var result="<fieldset><legend>Departments table</legend><button class=\"add_deps btn btn-info\" id=\"add_dep\">Add</button>"+
                         "<table class=\"departments_table table table-bordered table-sm table-hover\"><thead>"+
-                        "<tr class=\"active\"><td scope=\"col\">Id</td><td scope=\"col\">Name</td><td scope=\"col\">Description</td><td colspan=\"2\"></td></tr></thead>";
+                        "<tr class=\"active\"><td scope=\"col\">Id</td><td scope=\"col\">Name</td><td scope=\"col\">Description</td><td colspan=\"2\">Actions</td></tr></thead>";
     for (i=0; i<table.length;i++) {
         var id = table[i].id;
         var name = table[i].departmmentName;
@@ -234,85 +234,3 @@ function back_dep(){
     console.log("page: " + currantPageD);
     createTableD();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- * $(document).on("click", "button.update_deps", update_form_dep);
-    $(document).on("click", "button.delete_deps", delete_dep);
-    $(document).on("click", "button.add_deps", add_form_dep);
-    $(document).on("click", "button.cancel_deps", cansel_update_dep);
-    $(document).on("click", "button.save_deps", save_update_dep);
-    $(document).on("click", "button.cancel_add_deps", cansel_update_dep);
-    $(document).on("click", "button.save_add_deps", save_add_dep);
-    $(document).on("click", "button.forward_dep", forward_dep);
-    $(document).on("click", "button.back_dep", back_dep);
-    $(document).on("click", "button.close_dialog", close_dialog);
-
-
-      
-    var start = 0 + (10 * (currantPageD-1));
-    var end = 10 + (10 * (currantPageD-1));
-    var table = allDeps.slice(start, end);
-
-    var result="<fieldset><legend>Departments table</legend><button class=\"add_deps btn btn-info\">Add</button>"+
-               "<table class=\"departments_table table table-bordered table-sm table-hover\"><thead>"+
-               "<tr class=\"active\"><td scope=\"col\">Id</td><td scope=\"col\">Name</td><td scope=\"col\">Description</td><td colspan=\"2\"></tr></thead>";
-    
-    for (i=0; i<table.length;i++) {
-        var id = table[i].id;
-        var name = table[i].departmmentName;
-        var desc = table[i].description;
-        if(index === id){
-            result+="<tr scope=\"row\"><form><td id=\"dep_id\">" + id + "</td>" +
-                    "<td><input type=\"text\" id=\"dep_name\" value=\"" + name +"\"/></td>" +
-                    "<td><input type=\"text\" id=\"dep_descr\" value=\"" + desc +"\"/></td>" +
-                    "<td><button class=\"cancel_deps btn btn-warning\">cancel</button></td>" +
-                    "<td><button class=\"save_deps btn btn-success\">save</button></td></form></tr>";
-        }
-        else{
-            result+="<tr><td>"+id+"</td><td>"+name+"</td><td>"+desc+"</td>"+
-                    "<td><button class=\"delete_deps btn btn-outline-danger\" >Delete</button>"+
-                    "</td><td><button class=\"update_deps btn btn-outline-primary\" value=\""+id+"\">Update</button></td></tr>";
-                   
-        }
-    }
-    $(document).on("click", "button.cancel_deps", cansel_update_dep);
-    $(document).on("click", "button.save_deps", save_update_dep);
-    result+= "</table><button style=\"float: left;\" class=\"back_dep page-link\"><-</button>"+
-             "<div class=\"page-link\" style=\"float: left;\">"+currantPageD + " / " + maxPageD +"</div>"+
-             "<button style=\"float: left;\" class=\"forward_dep page-link\">-></button>"+
-             "</fieldset>";
-    $('#resp_ajax_deps').html(result);
-
- */

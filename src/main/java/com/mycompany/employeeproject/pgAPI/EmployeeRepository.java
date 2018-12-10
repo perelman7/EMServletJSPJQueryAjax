@@ -2,7 +2,6 @@ package com.mycompany.employeeproject.pgAPI;
 
 import com.mycompany.employeeproject.connector.DataBaseConnector;
 import com.mycompany.employeeproject.model.Employee;
-import com.mycompany.employeeproject.model.EmployeeWithDepartment;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ public class EmployeeRepository {
     
     public List<Employee> getAllEmployees(){
         List<Employee> employees = new ArrayList<>();
-        String sql = "SELECT id, name, surname, fathername, date_of_berth, dep_id FROM EMPLOYEES order by id";
+        String sql = "SELECT id, name, surname, fathername, date_of_berth, dep_id FROM employees ORDER BY id";
 
         try(Connection con = DataBaseConnector.getConnection();
             Statement stmt = con.createStatement();
@@ -36,7 +35,7 @@ public class EmployeeRepository {
     }
 
     public int addEmployee(Employee emp){
-        String sql = "INSERT INTO EMPLOYEES(NAME, SURNAME, FATHERNAME, DATE_OF_BERTH, DEP_ID) VALUES(?, ?, ?, ?, ?) RETURNING id";
+        String sql = "INSERT INTO employees(name, surname, fathername, date_of_berth, dep_id) VALUES(?, ?, ?, ?, ?) RETURNING id";
         int result = 0;
         try(Connection con = DataBaseConnector.getConnection();
             PreparedStatement stmt = con.prepareStatement(sql)){

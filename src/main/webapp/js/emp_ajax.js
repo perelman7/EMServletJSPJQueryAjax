@@ -224,7 +224,7 @@ function createTable(val){
     var result="<fieldset><legend>Employees table</legend><button class=\"add_emps btn btn-info\">Add</button>"+
             "<table class=\"employees_table table table-bordered table-sm table-hover\" id=\"employees\"><thead>"+
             "<tr class=\"active \"><td scope=\"col\">Id</td><td scope=\"col\">Surname</td><td scope=\"col\">Name</td><td scope=\"col\">Father Name</td>"+
-            "<td scope=\"col\">Data of birthday</td><td scope=\"col\">Department</td><td colspan=\"2\"></tr></thead>";
+            "<td scope=\"col\">Data of birthday</td><td scope=\"col\">Department</td><td colspan=\"2\">Actions</tr></thead>";
     for (i=0; i<table.length;i++) {
         var id = table[i].id;
         var surname = table[i].surname;
@@ -283,61 +283,3 @@ function back_emp(){
     console.log("page: " + currantPage);
     createTable();
 }
-
-
-
-//CRUD for employee
-/*
-function update_form_emp(){
-    console.log("update_emp click");
-    var index = Number($(this).attr("value"));
-    var start = 0 + (10 * (currantPage-1));
-    var end = 10 + (10 * (currantPage-1));
-    var table = allEmps.slice(start, end);
-
-    var result="<fieldset><legend>Employees table</legend><button class=\"add_emps btn btn-info\" >Add</button>"+
-               "<table class=\"employees_table table table-bordered table-sm table-hover\"><thead class=\"thead-dark\">"+
-               "<tr class=\"\"><td scope=\"col\">Id</td><td scope=\"col\">Surname</td><td scope=\"col\">Name</td><td scope=\"col\">Father Name</td>"+
-               "<td scope=\"col\">Data of birthday</td><td scope=\"col\">Department</td><td colspan=\"2\"></tr></thead>";
-    
-    for (i=0; i<table.length;i++) {
-        var id = table[i].id;
-        var surname = table[i].surname;
-        var name = table[i].name;
-        var fatherName = table[i].fatherName;
-        var dataOfBirthday = table[i].dataOfBirthday;
-        var departmentName = table[i].departmentName;
-        var dep_id = table[i].dep_id;
-        var data = dataOfBirthday.split("-");
-        
-        if(index === id){
-            
-            result+="<tr scope=\"row\"><form><td class=\"\" id=\"emp_id\">" + id + "</td>" +
-                    "<td class=\"\"><input type=\"text\" id=\"surname\" value=\"" + surname +"\"/></td>" +
-                    "<td class=\"\"><input type=\"text\" id=\"name\" value=\"" + name +"\"/></td>" +
-                    "<td class=\"\"><input type=\"text\" id=\"fatherName\" value=\"" + fatherName +"\"/></td>" +
-                    "<td class=\"\"><input type=\"date\" id=\"dataOfBirthday\" value=\"" + dataOfBirthday +"\"/></td>" +
-                    "<td class=\"\"><select id=\"departmentName\"><option selected value=\""+dep_id+"\">"+departmentName+"</option>";
-            for (x=0; x<allDeps.length;x++) {
-                if(Number(dep_id) !== allDeps[x].id){
-                    result+="<option value=\""+allDeps[x].id+"\">"+allDeps[x].departmmentName+"</option>";
-                }
-            }
-                
-            result+="<td><button class=\"cancel_emps btn btn-warning\">cancel</button></td>" +
-                    "<td><button class=\"save_emps btn btn-success\">save</button></td></form></tr>";
-        }
-        else{
-            result+="<tr><td>"+id+"</td><td>"+surname+"</td><td>"+name+"</td><td>"+fatherName+"</td><td>"+
-                data[2]+"."+data[1]+"."+data[0]+"</td><td>"+departmentName+"</td>"+
-                "<td><button class=\"delete_emps btn btn-outline-danger\" value=\""+id+"\">Delete</button></td>"+
-                "<td><button class=\"update_emps btn btn-outline-primary\" value=\""+id+"\">Update</button></td></tr>";
-        }
-    }
-    result+="</table><button style=\"float: left;\" class=\"back_emp page-link\"><-</button>"+
-            "<div style=\"float: left;\"  class=\"page-link\">"+currantPage + " / " + maxPage+"</div>"+
-            "<button style=\"float: left;\" class=\"forward_emp page-link\">-></button>"+
-            "</fieldset>";
-    $('#resp_ajax_emps').html(result);
-}
-*/
