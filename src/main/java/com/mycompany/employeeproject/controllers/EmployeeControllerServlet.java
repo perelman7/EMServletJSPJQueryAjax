@@ -9,10 +9,12 @@ import com.mycompany.employeeproject.pgAPI.EmployeeWithDepartmentRepository;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "EmployeeServlet", urlPatterns = {"/employee"})
 public class EmployeeControllerServlet extends HttpServlet {
 
     private final EmployeeRepository employees = new EmployeeRepository();

@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.annotation.WebServlet;
 
+@WebServlet(name = "DepartmentServlet", urlPatterns = {"/departments"})
 public class DepartmentControllerServlet extends HttpServlet {
 
     private final DepartmentRepository departments = new DepartmentRepository();
@@ -36,7 +38,7 @@ public class DepartmentControllerServlet extends HttpServlet {
         if(name.trim().isEmpty() || id <= 0){
             resp.setStatus(400);
         }else{
-            boolean result = departments.update(new Department(id, name, desc));
+            boolean result = departments.updateDepartment(new Department(id, name, desc));
             AjaxResponse ajaxResp = new AjaxResponse(0, "Department was not update successful");
 
             if(result){
@@ -56,7 +58,7 @@ public class DepartmentControllerServlet extends HttpServlet {
         if(id <= 0){
             resp.setStatus(400);
         }else{
-            boolean result = departments.delete(id);
+            boolean result = departments.deleteDepartment(id);
             AjaxResponse ajaxResp = new AjaxResponse(0, "Department was not deleted successful");
 
             if(result){
