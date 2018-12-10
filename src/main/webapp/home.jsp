@@ -25,8 +25,8 @@
         </c:choose>
         <c:choose>
             <c:when test="${param.maxPagesEmp == null}">
-                <c:set var="maxPagesEmp" value="${Math.ceil(list.empDeps.size() / 10)}"></c:set>
-                <fmt:parseNumber var = "maxPagesEmp" integerOnly = "true" type = "number" value = "${maxPagesEmp}" />
+                <c:set var="maxPagesEmp" value="${list.empDeps.size() / 10}"></c:set>
+                <fmt:formatNumber var = "maxPagesEmp" maxFractionDigits="0" value="${maxPagesEmp + (maxPagesEmp % 1 == 0 ? 0 : 0.5)}" />
             </c:when>
             <c:otherwise>
                 <c:set var="maxPagesEmp" value="${param.maxPagesEmp}"></c:set>
@@ -51,7 +51,7 @@
         <c:choose>
             <c:when test="${param.maxPagesDep == null}">
                 <c:set var="maxPagesDep" value="${list.departments.size() / 10}"></c:set>
-                <fmt:formatNumber var = "maxPagesDep" value="${maxPagesDep + (maxPagesDep % 1 == 0 ? 0 : 0.5)}" />
+                <fmt:formatNumber var = "maxPagesDep" maxFractionDigits="0" value="${maxPagesDep + (maxPagesDep % 1 == 0 ? 0 : 0.5)}" />
             </c:when>
             <c:otherwise>
                 <c:set var="maxPagesDep" value="${param.maxPagesDep}"></c:set>
@@ -89,11 +89,9 @@
                             </c:forEach>
                         </tbody>
                     </table>
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp - 1}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}"><-</a>
+                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp - 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}"><-</a>
                     <div style="float: left;"  class="page-link">${currentPageEmp} / ${maxPagesEmp}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp + 1}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}">-></a>
+                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp + 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}">-></a>
                 </div>
                 <div class="col-lg-6">
                     <table class="table table-bordered table-sm table-hover">
@@ -115,11 +113,9 @@
                             </c:forEach>
                         </tbody>
                     </table>
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep - 1}&maxPagesDep=${maxPagesDep}"><-</a>
+                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep - 1}&maxPagesDep=${maxPagesDep}"><-</a>
                     <div style="float: left;"  class="page-link">${currentPageDep} / ${maxPagesDep}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}
-                       &currentPageDep=${currentPageDep + 1}&maxPagesDep=${maxPagesDep}">-></a>
+                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep + 1}&maxPagesDep=${maxPagesDep}">-></a>
                 </div>
             </div>
         </div>
