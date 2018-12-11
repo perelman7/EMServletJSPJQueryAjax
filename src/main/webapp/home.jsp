@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <a class="btn btn-outline-primary" href="forms/departmentForm.jsp">Add Department</a>
+                    <a class="btn btn-outline-primary" href="forms/departmentForm.html">Add Department</a>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
-                    <a class="btn btn-outline-primary" href="forms/employeeForm.html">Add Employee</a>
+                    <a class="btn btn-outline-primary" href="forms/employeeForm.jsp">Add Employee</a>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
