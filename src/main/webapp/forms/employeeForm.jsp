@@ -13,7 +13,7 @@
             List<Department> departments = (List<Department>) session.getAttribute("modelDepartments");
         %>
         <div class="container">
-            <form action="editDeleteEmployee" method="post">
+            <form>
                 <div class="form-group">
                     <label for="surname">Surname</label>
                     <input class="form-control" type="text" name="surname" placeholder="Enter surname"/>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <a class="btn btn-outline-dark" href="/EmployeeProject/readAddEmployee">Cancel</a>
-                    <td><input class="btn btn-outline-success" type="submit" value="Add">
+                    <input class="btn btn-outline-success" type="submit" value="Add">
                 </div>
             </form>
         </div>
