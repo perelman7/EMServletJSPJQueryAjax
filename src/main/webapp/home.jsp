@@ -12,7 +12,7 @@
     </head>
     <body>
         <%
-            List<EmployeeWithDepartment> employees = (List<EmployeeWithDepartment>) request.getAttribute("modelEmployees");
+            List<EmployeeWithDepartment> employees = (List<EmployeeWithDepartment>) session.getAttribute("modelEmployees");
             List<Department> departments = (List<Department>) session.getAttribute("modelDepartments");
             int currentPageEmp = 1;
             int maxPagesEmp = (int) Math.ceil(employees.size() / 10.0);
