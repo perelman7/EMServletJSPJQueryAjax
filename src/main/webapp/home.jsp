@@ -20,7 +20,6 @@
             int maxPagesDep = (int) Math.ceil(departments.size() / 10.0);
             int editEmployeeId = 0;
             int editDepartmentId = 0;
-
             try {
                 if (Integer.parseInt(request.getParameter("currentPageEmp")) > maxPagesEmp) {
                     currentPageEmp = maxPagesEmp;
@@ -29,9 +28,7 @@
                 } else if (request.getParameter("currentPageEmp") != null || !request.getParameter("currentPageEmp").isEmpty()) {
                     currentPageEmp = Integer.parseInt(request.getParameter("currentPageEmp"));
                 }
-
             } catch (Exception e) {}
-
             try {
                 if (Integer.parseInt(request.getParameter("currentPageDep")) > maxPagesDep) {
                     currentPageDep = maxPagesDep;
@@ -41,7 +38,6 @@
                     currentPageDep = Integer.parseInt(request.getParameter("currentPageDep"));
                 }
             } catch (Exception e) {}
-
             try {
                 if (request.getParameter("editEmployeeId") != null || !request.getParameter("editEmployeeId").isEmpty()) {
                     editEmployeeId = Integer.parseInt(request.getParameter("editEmployeeId"));
@@ -52,13 +48,11 @@
                     editDepartmentId = Integer.parseInt(request.getParameter("editDepartmentId"));
                 }
             } catch (Exception e) {}
-
             int beginEmp = 10 * (currentPageEmp - 1);
             int endEmp = 10 + 10 * (currentPageEmp - 1);;
             if (endEmp > employees.size()) {
                 endEmp = employees.size();
             }
-
             int beginDep = 10 * (currentPageDep - 1);
             int endDep = 10 + 10 * (currentPageDep - 1);
             if (endDep > employees.size()) {
@@ -82,24 +76,6 @@
                             </tr>
                         </thead>
 
-<<<<<<< HEAD
-                        <tbody>
-                            <c:forEach items="${list.empDeps}" var = "emp" begin="${10*(currentPageEmp - 1)}" end="${(10 + 10*(currentPageEmp - 1) - 1 )}">
-                                <tr>
-                                    <td>${emp.id}</td>
-                                    <td>${emp.surname}</td>
-                                    <td>${emp.name}</td>
-                                    <td>${emp.fatherName}</td>
-                                    <td>${emp.dataOfBirthday}</td>
-                                    <td>${emp.departmentName}</td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp - 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}"><-</a>
-                    <div style="float: left;"  class="page-link">${currentPageEmp} / ${maxPagesEmp}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp + 1}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep}&maxPagesDep=${maxPagesDep}">-></a>
-=======
                         <tbody><%
                             for (int i = beginDep; i < endDep; i++) {
                                 if(editDepartmentId == departments.get(i).getId()){
@@ -130,7 +106,6 @@
                     <a style="float: left;" class="page-link" href="/EmployeeProject/readAddEmployee?currentPageEmp=<% out.print(currentPageEmp); %>&currentPageDep=<% out.print(currentPageDep - 1); %>"><-</a>
                     <div style="float: left;"  class="page-link"><% out.print(currentPageDep); %> / <% out.print(maxPagesDep); %></div>
                     <a style="float: left;" class="page-link" href="/EmployeeProject/readAddEmployee?currentPageEmp=<% out.print(currentPageEmp); %>&currentPageDep=<% out.print(currentPageDep + 1); %>">-></a>
->>>>>>> 99e16bb4a14332093753a5147dad4ed82350c5d3
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
@@ -193,15 +168,9 @@
                             %></tbody><%
                         %>
                     </table>
-<<<<<<< HEAD
-                    <a style="float: left;" class="page-link" href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep - 1}&maxPagesDep=${maxPagesDep}"><-</a>
-                    <div style="float: left;"  class="page-link">${currentPageDep} / ${maxPagesDep}</div>
-                    <a style="float: left;" class="page-link"  href="?currentPageEmp=${currentPageEmp}&maxPagesEmp=${maxPagesEmp}&currentPageDep=${currentPageDep + 1}&maxPagesDep=${maxPagesDep}">-></a>
-=======
                     <a style="float: left;" class="page-link" href="/EmployeeProject/readAddEmployee?currentPageEmp=<% out.print(currentPageEmp - 1); %>&currentPageDep=<% out.print(currentPageDep); %>"><-</a>
                     <div style="float: left;"  class="page-link"><% out.print(currentPageEmp); %> / <% out.print(maxPagesEmp); %></div>
                     <a style="float: left;" class="page-link" href="/EmployeeProject/readAddEmployee?currentPageEmp=<% out.print(currentPageEmp + 1); %>&currentPageDep=<% out.print(currentPageDep); %>">-></a>
->>>>>>> 99e16bb4a14332093753a5147dad4ed82350c5d3
                 </div>
             </div>
         </div>   
