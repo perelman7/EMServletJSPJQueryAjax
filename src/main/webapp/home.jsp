@@ -60,9 +60,26 @@
                 endDep = departments.size();
             }
         %>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">EMPLOYEE PROJECT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/EmployeeProject">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="btn btn-light">Log out</a>
+                </div>
+            </div>
+        </nav>
         <div class="container-fluid">
             <div class="row">
-                <h1>Home JSP!</h1>
+                <h1>JSP Page</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4">

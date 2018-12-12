@@ -1,5 +1,6 @@
 package com.mycompany.employeeproject.controllers.employeeController;
 
+import com.mycompany.employeeproject.model.Department;
 import com.mycompany.employeeproject.pgAPI.DepartmentRepository;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -24,5 +25,13 @@ public class ReadAddDepartmentServlet extends HttpServlet {
         cookie.setMaxAge(60 * 60);
         response.addCookie(cookie);
         request.getRequestDispatcher("/home.jsp").include(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("depName");
+        String desc = request.getParameter("description");
+        departments.addDepartment(new Department(name, desc));
+        response.sendRedirect("readAddEmployee");
     }
 }
