@@ -56,7 +56,7 @@
             }
             int beginDep = 10 * (currentPageDep - 1);
             int endDep = 10 + 10 * (currentPageDep - 1);
-            if (endDep > employees.size()) {
+            if (endDep > departments.size()) {
                 endDep = departments.size();
             }
         %>
@@ -69,11 +69,14 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/EmployeeProject">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/EmployeeProject/index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <div>
-                    <a class="btn btn-light">Log out</a>
+                    <a class="btn btn-light" href="googleLogout">Log out</a>
+                </div>
+                <div>
+                    <a class="btn btn-light" href="login.jsp">Log in</a>
                 </div>
             </div>
         </nav>
@@ -93,7 +96,6 @@
                                 <td colspan="2">Actions</td>
                             </tr>
                         </thead>
-
                         <tbody><%
                             for (int i = beginDep; i < endDep; i++) {
                                 if(editDepartmentId == departments.get(i).getId()){

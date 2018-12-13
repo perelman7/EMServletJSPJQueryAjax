@@ -1,4 +1,4 @@
-package com.mycompany.employeeproject.pgAPI;
+package com.mycompany.employeeproject.repositories;
 
 import com.mycompany.employeeproject.connector.DataBaseConnector;
 import com.mycompany.employeeproject.model.EmployeeWithDepartment;

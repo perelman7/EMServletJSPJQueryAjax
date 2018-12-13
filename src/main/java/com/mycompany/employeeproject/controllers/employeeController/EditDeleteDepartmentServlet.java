@@ -6,8 +6,7 @@
 package com.mycompany.employeeproject.controllers.employeeController;
 
 import com.mycompany.employeeproject.model.Department;
-import com.mycompany.employeeproject.model.Employee;
-import com.mycompany.employeeproject.pgAPI.DepartmentRepository;
+import com.mycompany.employeeproject.repositories.DepartmentRepository;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
