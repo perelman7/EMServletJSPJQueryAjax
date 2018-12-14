@@ -1,11 +1,11 @@
 package com.mycompany.employeeproject.controllers;
 
 import com.google.gson.Gson;
-import com.mycompany.employeeproject.pgAPI.EmployeeRepository;
+import com.mycompany.employeeproject.repositories.EmployeeRepository;
 import com.mycompany.employeeproject.model.AjaxResponse;
 import com.mycompany.employeeproject.model.Employee;
 import com.mycompany.employeeproject.model.EmployeeWithDepartment;
-import com.mycompany.employeeproject.pgAPI.EmployeeWithDepartmentRepository;
+import com.mycompany.employeeproject.repositories.EmployeeWithDepartmentRepository;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;

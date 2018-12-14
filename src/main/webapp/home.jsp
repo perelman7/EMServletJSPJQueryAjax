@@ -56,17 +56,67 @@
             }
             int beginDep = 10 * (currentPageDep - 1);
             int endDep = 10 + 10 * (currentPageDep - 1);
-            if (endDep > employees.size()) {
+            if (endDep > departments.size()) {
                 endDep = departments.size();
             }
         %>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">EMPLOYEE PROJECT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/EmployeeProject/index.jsp">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="btn btn-light" href="googleLogout">Log out</a>
+                </div>
+                <div>
+                    <a class="btn btn-light" href="login.jsp">Log in</a>
+                </div>
+            </div>
+        </nav>
         <div class="container-fluid">
             <div class="row">
-                <h1>Home JSP!</h1>
+                <div class="col-lg-4">
+                    <h1>JSP Page</h1>
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <%
+                        String name = String.valueOf(session.getAttribute("name"));
+                    %><h2><% out.print("User: " + name);%></h2><%
+                    %>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <a class="btn btn-outline-primary" href="forms/departmentForm.html">Add Department</a>
+                    <%
+                        try{
+                            String delMessage = String.valueOf(session.getAttribute("messageDelDep"));
+                            if(!delMessage.equals("null")){
+                                out.print(delMessage);
+                                session.removeAttribute("messageDelDep");
+                            }
+                            
+                            String messageEditDep = String.valueOf(session.getAttribute("messageEditDep"));
+                            if(!messageEditDep.equals("null")){
+                                out.print(messageEditDep);
+                                session.removeAttribute("messageEditDep");
+                            }
+                            
+                            String messageAddDep = String.valueOf(session.getAttribute("messageAddDep"));
+                            if(!messageAddDep.equals("null")){
+                                out.print(messageAddDep);
+                                session.removeAttribute("messageAddDep");
+                            }
+                        }catch(Exception ex){}
+                    %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
@@ -76,7 +126,6 @@
                                 <td colspan="2">Actions</td>
                             </tr>
                         </thead>
-
                         <tbody><%
                             for (int i = beginDep; i < endDep; i++) {
                                 if(editDepartmentId == departments.get(i).getId()){
@@ -111,6 +160,27 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
                     <a class="btn btn-outline-primary" href="forms/employeeForm.jsp">Add Employee</a>
+                    <%
+                        try{
+                            String messageDelEmp = String.valueOf(session.getAttribute("messageDelEmp"));
+                            if(!messageDelEmp.equals("null")){
+                                out.print(messageDelEmp);
+                                session.removeAttribute("messageDelEmp");
+                            }
+                            
+                            String messageEditEmp = String.valueOf(session.getAttribute("messageEditEmp"));
+                            if(!messageEditEmp.equals("null")){
+                                out.print(messageEditEmp);
+                                session.removeAttribute("messageEditEmp");
+                            }
+                            
+                            String messageAddEmp = String.valueOf(session.getAttribute("messageAddEmp"));
+                            if(!messageAddEmp.equals("null")){
+                                out.print(messageAddEmp);
+                                session.removeAttribute("messageAddEmp");
+                            }
+                        }catch(Exception ex){}
+                    %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>

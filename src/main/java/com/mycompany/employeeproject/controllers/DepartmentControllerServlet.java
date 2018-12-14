@@ -1,7 +1,7 @@
 package com.mycompany.employeeproject.controllers;
 
 import com.google.gson.Gson;
-import com.mycompany.employeeproject.pgAPI.DepartmentRepository;
+import com.mycompany.employeeproject.repositories.DepartmentRepository;
 import com.mycompany.employeeproject.model.AjaxResponse;
 import com.mycompany.employeeproject.model.Department;
 import javax.servlet.ServletException;
