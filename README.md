@@ -4,7 +4,7 @@ Application for managing employees and departments entities. REST service and CR
 
 Technology stack:
 
-Java: Servlet, JSP, JDBC, Log4j;
+Java: Servlet, JSP, JDBC, Log4j, scribe (OAuth 2.0), JSTL;
 
 Additional: JS (JQuery), AJAX, HTML, CSS, Bootstrap;
 
@@ -17,3 +17,4 @@ Service: RESTfull;
 Building system: Maven;
 
 ![Image alt](https://github.com/perelman7/EmployeeProject/raw/master/src/main/resources/screen1.png)
+![screenshot of sample](https://github.com/perelman7/EmployeeProject/raw/master/src/main/resources/screen1.png)
