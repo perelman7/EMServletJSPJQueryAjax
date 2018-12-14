@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "EditDeleteDepartmentServlet", urlPatterns = {"/editDeleteDepartment"})
 public class EditDeleteDepartmentServlet extends HttpServlet {
@@ -23,7 +24,13 @@ public class EditDeleteDepartmentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        departments.deleteDepartment(id);
+        boolean res = departments.deleteDepartment(id);
+        HttpSession session = request.getSession();
+        if(res){
+            session.setAttribute("messageDelDep", "Department was deleted");
+        }else{
+            session.setAttribute("messageDelDep", "Department wasn`t deleted");
+        }
         response.sendRedirect("readAddEmployee");
     }
 
@@ -33,8 +40,13 @@ public class EditDeleteDepartmentServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("nameDep");
         String desc = request.getParameter("description");
-        departments.updateDepartment(new Department(id, name, desc));
+        boolean res = departments.updateDepartment(new Department(id, name, desc));
+        HttpSession session = request.getSession();
+        if(res){
+            session.setAttribute("messageEditDep", "Department was updated");
+        }else{
+            session.setAttribute("messageEditDep", "Department wasn`t updated");
+        }
         response.sendRedirect("readAddEmployee");
     }
-
 }

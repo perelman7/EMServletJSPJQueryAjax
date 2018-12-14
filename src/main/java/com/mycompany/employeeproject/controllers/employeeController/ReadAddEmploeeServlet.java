@@ -33,7 +33,13 @@ public class ReadAddEmploeeServlet extends HttpServlet {
         String fatherName = request.getParameter("fatherName");
         String dataOfBirthday = request.getParameter("dataOfBirthday");
         int departmentId = Integer.parseInt(request.getParameter("departmentId"));
-        employees.addEmployee(new Employee(surname, name, fatherName, dataOfBirthday, departmentId));
+        int id = employees.addEmployee(new Employee(surname, name, fatherName, dataOfBirthday, departmentId));
+        HttpSession session = request.getSession();
+        if(id > 0){
+            session.setAttribute("messageAddEmp", "Employee was added");
+        }else{
+            session.setAttribute("messageAddEmp", "Employee wasn`t added");
+        }
         response.sendRedirect("readAddEmployee");
     }
 }

@@ -69,7 +69,7 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/EmployeeProject/index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/EmployeeProject/index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <div>
@@ -82,11 +82,41 @@
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <h1>JSP Page</h1>
+                <div class="col-lg-4">
+                    <h1>JSP Page</h1>
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <%
+                        String name = String.valueOf(session.getAttribute("name"));
+                    %><h2><% out.print("User: " + name);%></h2><%
+                    %>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <a class="btn btn-outline-primary" href="forms/departmentForm.html">Add Department</a>
+                    <%
+                        try{
+                            String delMessage = String.valueOf(session.getAttribute("messageDelDep"));
+                            if(!delMessage.equals("null")){
+                                out.print(delMessage);
+                                session.removeAttribute("messageDelDep");
+                            }
+                            
+                            String messageEditDep = String.valueOf(session.getAttribute("messageEditDep"));
+                            if(!messageEditDep.equals("null")){
+                                out.print(messageEditDep);
+                                session.removeAttribute("messageEditDep");
+                            }
+                            
+                            String messageAddDep = String.valueOf(session.getAttribute("messageAddDep"));
+                            if(!messageAddDep.equals("null")){
+                                out.print(messageAddDep);
+                                session.removeAttribute("messageAddDep");
+                            }
+                        }catch(Exception ex){}
+                    %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
@@ -130,6 +160,27 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
                     <a class="btn btn-outline-primary" href="forms/employeeForm.jsp">Add Employee</a>
+                    <%
+                        try{
+                            String messageDelEmp = String.valueOf(session.getAttribute("messageDelEmp"));
+                            if(!messageDelEmp.equals("null")){
+                                out.print(messageDelEmp);
+                                session.removeAttribute("messageDelEmp");
+                            }
+                            
+                            String messageEditEmp = String.valueOf(session.getAttribute("messageEditEmp"));
+                            if(!messageEditEmp.equals("null")){
+                                out.print(messageEditEmp);
+                                session.removeAttribute("messageEditEmp");
+                            }
+                            
+                            String messageAddEmp = String.valueOf(session.getAttribute("messageAddEmp"));
+                            if(!messageAddEmp.equals("null")){
+                                out.print(messageAddEmp);
+                                session.removeAttribute("messageAddEmp");
+                            }
+                        }catch(Exception ex){}
+                    %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>

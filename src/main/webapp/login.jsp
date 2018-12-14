@@ -12,6 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,36 +28,23 @@
                         <a class="nav-link" href="readAddEmployee">JSP Tables <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/EmployeeProject/index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/EmployeeProject/index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <div>
                     <a class="btn btn-light" href="googleLogout">Log out</a>
                 </div>
-                <div>
-                    <a class="btn btn-light" href="login.jsp">Log in</a>
-                </div>
             </div>
         </nav>
-        <h1>Login page!</h1>
-        <form action="googleLogin" method="GET" > 
-            <button type="submit">Login</button> 
-        </form>
-        <%
-            try{
-                String name = String.valueOf(session.getAttribute("name")); 
-                String email = String.valueOf(session.getAttribute("email"));
-                Token token = (Token)session.getAttribute("token");
-                
-                out.print("Name: " + name); %> <br> <%
-                out.print("Email: " + email);%> <br> <%
-                out.print("Token token: " + token.getToken());%> <br> <%
-                out.print("Token secret: " + token.getSecret());%> <br> <%  
-                out.print("Token raw: " + token.getRawResponse());%> <br> <%
-                out.print("Token tostr: " + token.toString());%> <br> <%  
-                out.print(request.getRemoteUser());%> <br> <%
-                    
-            }catch(Exception e){}
-        %>
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <h1>Login page!</h1>
+            </div>
+            <div class="row h-100 justify-content-center align-items-center">
+                <form action="googleLogin" method="GET" > 
+                    <button class="btn btn-block btn-social btn-google" type="submit"><i class="fa fa-google"></i> Sign in with Google</button> 
+                </form>
+            </div>
+        </div>
     </body>
 </html>

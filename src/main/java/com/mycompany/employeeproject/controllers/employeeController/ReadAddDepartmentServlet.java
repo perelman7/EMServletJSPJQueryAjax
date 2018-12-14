@@ -31,7 +31,13 @@ public class ReadAddDepartmentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("depName");
         String desc = request.getParameter("description");
-        departments.addDepartment(new Department(name, desc));
+        int id = departments.addDepartment(new Department(name, desc));
+        HttpSession session = request.getSession();
+        if(id > 0){
+            session.setAttribute("messageAddDep", "Department was added");
+        }else{
+            session.setAttribute("messageAddDep", "Department wasn`t added");
+        }
         response.sendRedirect("readAddEmployee");
     }
 }

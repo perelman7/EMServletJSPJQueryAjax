@@ -24,14 +24,14 @@
                         <a class="nav-link" href="/EmployeeProject/readAddEmployee">JSP Tables <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/EmployeeProject/index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/EmployeeProject/index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <div>
-                    <a class="btn btn-light" href="googleLogout">Log out</a>
+                    <a class="btn btn-light" href="/EmployeeProject/googleLogout">Log out</a>
                 </div>
                 <div>
-                    <a class="btn btn-light" href="login.jsp">Log in</a>
+                    <a class="btn btn-light" href="/EmployeeProject/login.jsp">Log in</a>
                 </div>
             </div>
         </nav>

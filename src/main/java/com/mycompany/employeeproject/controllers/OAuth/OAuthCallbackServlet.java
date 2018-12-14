@@ -36,7 +36,7 @@ public class OAuthCallbackServlet extends HttpServlet {
       //OK the user have consented so lets find out about the user 
       AsyncContext ctx = req.startAsync(); 
       ctx.start(new GetUserInfo(req, resp, ctx));
-      resp.sendRedirect("/EmployeeProject/index.html");
+      resp.sendRedirect("/EmployeeProject/index.jsp");
    } 
 }
 
