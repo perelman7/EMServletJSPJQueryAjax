@@ -14,6 +14,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body {
+                background: url(loginPage.png) no-repeat;
+                background-size: 100%;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -32,19 +38,11 @@
                     </li>
                 </ul>
                 <div>
-                    <a class="btn btn-light" href="googleLogout">Log out</a>
+                    <form action="googleLogin" method="GET" > 
+                        <button class="btn btn-block btn-social btn-google" type="submit"><i class="fa fa-google"></i> Login with Google</button> 
+                    </form>
                 </div>
             </div>
         </nav>
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center">
-                <h1>Login page!</h1>
-            </div>
-            <div class="row h-100 justify-content-center align-items-center">
-                <form action="googleLogin" method="GET" > 
-                    <button class="btn btn-block btn-social btn-google" type="submit"><i class="fa fa-google"></i> Sign in with Google</button> 
-                </form>
-            </div>
-        </div>
     </body>
 </html>

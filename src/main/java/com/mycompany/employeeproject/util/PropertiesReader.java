@@ -14,7 +14,6 @@ public class PropertiesReader {
         try(InputStream fis = new FileInputStream(Constant.PROP_PATH)){
             prop.load(fis);
             String result = prop.getProperty(propertyName);
-
             return result;
         }catch (IOException e){
             return null;

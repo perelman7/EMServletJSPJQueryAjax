@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Employee form</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"/>
@@ -13,7 +13,7 @@
             List<Department> departments = (List<Department>) session.getAttribute("modelDepartments");
         %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">EMPLOYEE PROJECT</a>
+            <a class="navbar-brand" href="/EmployeeProject/login.jsp">EMPLOYEE PROJECT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,9 +29,6 @@
                 </ul>
                 <div>
                     <a class="btn btn-light" href="/EmployeeProject/googleLogout">Log out</a>
-                </div>
-                <div>
-                    <a class="btn btn-light" href="/EmployeeProject/login.jsp">Log in</a>
                 </div>
             </div>
         </nav>

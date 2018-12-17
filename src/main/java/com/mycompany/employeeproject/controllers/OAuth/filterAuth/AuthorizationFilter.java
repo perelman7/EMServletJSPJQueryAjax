@@ -21,7 +21,7 @@ public class AuthorizationFilter implements Filter{
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("init auth filter");
+        System.out.print("init auth filter");
     }
 
     @Override
@@ -47,6 +47,6 @@ public class AuthorizationFilter implements Filter{
 
     @Override
     public void destroy() {
-        System.out.println("destroy auth filter");
+        System.out.print("destroy auth filter");
     }
 }

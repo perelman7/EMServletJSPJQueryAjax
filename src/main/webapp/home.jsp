@@ -14,6 +14,7 @@
         <%
             List<EmployeeWithDepartment> employees = (List<EmployeeWithDepartment>) session.getAttribute("modelEmployees");
             List<Department> departments = (List<Department>) session.getAttribute("modelDepartments");
+            String userLoginName = String.valueOf(session.getAttribute("name"));
 
             int currentPageEmp = 1;
             int maxPagesEmp = (int) Math.ceil(employees.size() / 10.0);
@@ -61,7 +62,7 @@
             }
         %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">EMPLOYEE PROJECT</a>
+            <a class="navbar-brand" href="/EmployeeProject/login.jsp">EMPLOYEE PROJECT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,22 +76,16 @@
                 <div>
                     <a class="btn btn-light" href="googleLogout">Log out</a>
                 </div>
-                <div>
-                    <a class="btn btn-light" href="login.jsp">Log in</a>
-                </div>
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-lg-4">
                     <h1>JSP Page</h1>
                 </div>
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <%
-                        String name = String.valueOf(session.getAttribute("name"));
-                    %><h2><% out.print("User: " + name);%></h2><%
-                    %>
+                    <h2><% out.print("User: " + userLoginName);%></h2>
                 </div>
             </div>
             <div class="row">
@@ -119,7 +114,7 @@
                     %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
-                            <tr>
+                            <tr class="bg-dark text-white">
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Description</td>
@@ -183,7 +178,7 @@
                     %>
                     <table class="table table-bordered table-sm table-hover">
                         <thead>
-                            <tr>
+                            <tr class="bg-dark text-white"  >
                                 <td>Id</td>
                                 <td>Surname</td>
                                 <td>Name</td>
@@ -245,6 +240,5 @@
                 </div>
             </div>
         </div>   
-
     </body>
 </html>

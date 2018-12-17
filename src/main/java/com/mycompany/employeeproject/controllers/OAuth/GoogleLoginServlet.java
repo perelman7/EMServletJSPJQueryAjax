@@ -31,7 +31,6 @@ public class GoogleLoginServlet extends HttpServlet {
                "https://www.googleapis.com/auth/plus.me " +
                "https://www.googleapis.com/auth/userinfo.email")
          .build();
-      
 
       HttpSession session = request.getSession(); 
       session.setAttribute("oauth2Service", service);

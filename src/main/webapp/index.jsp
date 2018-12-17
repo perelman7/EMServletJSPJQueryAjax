@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"/>
@@ -10,8 +10,9 @@
         <script type="text/javascript" src="js/emp_ajax.js"></script>
     </head>
     <body>
+        <% String userLoginName = String.valueOf(session.getAttribute("name")); %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">EMPLOYEE PROJECT</a>
+            <a class="navbar-brand" href="/EmployeeProject/login.jsp">EMPLOYEE PROJECT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,9 +26,6 @@
                 <div>
                     <a class="btn btn-light" href="googleLogout">Log out</a>
                 </div>
-                <div>
-                    <a class="btn btn-light" href="login.jsp">Log in</a>
-                </div>
             </div>
         </nav>
         <div class="container-fluid">
@@ -37,10 +35,7 @@
                 </div>
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <%
-                        String name = String.valueOf(session.getAttribute("name"));
-                    %><h2><% out.print("User: " + name);%></h2><%
-                    %>
+                    <h2><% out.print("User: " + userLoginName);%></h2>
                 </div>
             </div>
             <div class="row">
